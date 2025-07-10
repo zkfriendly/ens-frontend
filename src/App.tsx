@@ -18,7 +18,7 @@ function App() {
     }
 
     try {
-      const response = await fetch("http://localhost:4500/command", {
+      const response = await fetch("https://enss.zk.email/command", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -26,7 +26,7 @@ function App() {
         body: JSON.stringify({
           email,
           command: `Claim ENS name for address ${address} with resolver resolver.eth`,
-          verifier: "0x51F15e1398f870cd8b0ff52D60e3D25aBdAE0D70"
+          verifier: "0x51F15e1398f870cd8b0ff52D60e3D25aBdAE0D70",
         }),
       });
 
