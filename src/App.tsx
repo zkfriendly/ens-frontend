@@ -18,12 +18,16 @@ function App() {
     }
 
     try {
-      const response = await fetch("http://localhost:4500/claim", {
+      const response = await fetch("http://localhost:4500/command", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ email, address }),
+        body: JSON.stringify({
+          email,
+          command: `Claim ENS name for address ${address} with resolver resolver.eth`,
+          verifier: "0x51F15e1398f870cd8b0ff52D60e3D25aBdAE0D70"
+        }),
       });
 
       if (!response.ok) {
